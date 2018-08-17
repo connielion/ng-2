@@ -1,15 +1,15 @@
 <div class="margin-body">
   <h1 class="text-center">Login</h1>
 
-  <form class="form-container">
+  <form class="form-container" (ngSubmit)="login()">
 
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Email" name="email">
+      <input matInput type="text" placeholder="Email" name="email" [(ngModel)]="authUser.email">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="password" placeholder="Enter Password" name="password">
+      <input matInput type="password" placeholder="Enter Password" name="password" [(ngModel)]="authUser.password">
     </mat-form-field>
 
 
