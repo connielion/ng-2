@@ -1,24 +1,3 @@
-<h1>Not done</h1>
-
-<ul *ngFor="let item of items">
-
-  <li (click)="toggleStatus(item)" [ngClass]="{ 'complete' : item.status }" *ngIf="!item.done">
-    {{item.name}}
-    <span (click)="removeItem(item)">remove</span>
-  </li>
-</ul>
-
-<h1>Done</h1>
-
-<ul *ngFor="let item of items; let i = index">
-  <li (click)="toggleStatus(item)" [ngClass]="{ 'complete' : item.status }" *ngIf="item.done">
-    {{item.name}}
-    <span (click)="removeItem(item)">remove </span>
-    <span (click)="deleteItem(i)"> delete</span>
-  </li>
-</ul>
-
-<form (ngSubmit)="addItem()">
-  <input type="text" placeholder="New Item" name="item" [(ngModel)]="newItem">
-  <button>Add</button>
-</form>
+<div class="margin-body">
+  <h1>home sweet home</h1>
+</div>

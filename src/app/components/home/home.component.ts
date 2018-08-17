@@ -8,59 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
 
-  items: object[] = [
-
-    {
-      name: 'item 1',
-      status: false,
-      done: false
-    },
-    {
-      name: 'item 2',
-      status: false,
-      done: false
-    },
-    {
-      name: 'item 3',
-      status: true,
-      done: false
-    },
-    {
-      name: 'item 4',
-      status: true,
-      done: false
-    }
-  ];
-
-  newItem: string;
 
   constructor() { }
 
-   // line-through item when user clicks 'remove'
-  toggleStatus(item) {
-    item.status = !item.status;
-  }
-
-  removeItem(item) {
-    item.done = !item.done;
-  }
-
-  // form: new item
- addItem() {
-   const item: object = {
-     name: this.newItem,
-     status: false,
-     done: false
-   };
-   this.items.push(item);
-   this.newItem = '';
-   return;
- }
-
- deleteItem(item) {
-  // const index = this.items.indexOf(item);
-  this.items.splice(item, 1);
- }
 
   ngOnInit() {
   }
