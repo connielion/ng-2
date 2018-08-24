@@ -18,7 +18,8 @@ export class UserService {
 
         this.localStorage.set('currentUser', res.user);
         this.router.navigateByUrl('/');
-    });
+    }, err => console.log('There was an error!!'), () => this.router.navigateByUrl('/')
+  );
   }
 
 // login()
@@ -26,7 +27,17 @@ login(user: any) {
   return this.api.post('userLogin/', user).subscribe((res: any) => {
     this.localStorage.set('currentUser', res.user);
     this.router.navigateByUrl('/');
-  });
+  }, err => console.log(err), () => this.router.navigateByUrl('/')
+);
+}
+
+// logout()
+logout() {
+  return this.localStorage.remove('currentUser');
+}
+
+getUser(_id) {
+  return this.api.get(`/user/${_id}`);
 }
 
 getAllUsers() {
