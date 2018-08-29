@@ -8,7 +8,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 })
 export class ApiserviceService {
 
-  private apiUrl = 'https://jordomav.ngrok.io';
+  // private apiUrl = 'https://jordomav.ngrok.io';
+  private apiUrl = 'https://1952ffa4.ngrok.io';
 
   constructor(private http: HttpClient) { }
 

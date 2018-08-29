@@ -7,6 +7,7 @@ export class LocalStorageService {
   private app = 'mean.';
 
   constructor() { }
+  
   set(key, data) {
     localStorage.setItem(`${this.app}${key}`, JSON.stringify(data));
   }
