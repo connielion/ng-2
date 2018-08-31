@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserService } from '../../services/user.service';
 import { Iuser } from '../../interfaces/iuser';
+import { SessionStorageService } from '../../services/session-storage.service';
+import { Token } from '@angular/compiler';
+import { TokenService } from '../../services/token.service';
 
 @Component ({
   selector: 'app-users',
@@ -14,7 +17,7 @@ export class UsersComponent implements OnInit {
   exists: Boolean = false;
   displayedColumns: string[] = ['firstName', 'lastName', 'email'];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private sessionStorage: SessionStorageService, private token: TokenService) { }
 
   getAllUsers() {
     this.userService.getAllUsers().subscribe((res: any) => {
@@ -29,7 +32,9 @@ export class UsersComponent implements OnInit {
   */
 
   ngOnInit() {
-    this.getAllUsers();
+   //  this.getAllUsers();
+   // alert(this.sessionStorage.get('token'));
+    this.token.checkToken();
   }
 
 }

@@ -20,6 +20,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
+
   </table>
   <ng-template #noFirstName [ngClass]="exists ? 'success-text' : 'danger-text'" click()=""></ng-template>
   <!--will never be-->

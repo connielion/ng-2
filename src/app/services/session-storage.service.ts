@@ -7,18 +7,19 @@ export class SessionStorageService {
 
   private app = 'mean.';
 
+  // session storage ~ incognito mode in chrome, data will be gone after closing browser
   constructor() { }
 // method
   set(key, data) {
-    localStorage.setItem(`${this.app}${key}`, JSON.stringify(data));
+    sessionStorage.setItem(`${this.app}${key}`, JSON.stringify(data));
   }
 
   get(key) {
-    return JSON.parse(localStorage.getItem(`${this.app}${key}`));
+    return JSON.parse(sessionStorage.getItem(`${this.app}${key}`));
   }
 
   remove(key) {
-    return localStorage.removeItem(`${this.app}${key}`);
+    return sessionStorage.removeItem(`${this.app}${key}`);
   }
 
 }

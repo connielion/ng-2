@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
   getAllUsers() {
     this.productService.getAllProd().subscribe((res: any) => {
       console.log(res);
-     this.product = res;
+    // this.product = res;
     });
   }
 
