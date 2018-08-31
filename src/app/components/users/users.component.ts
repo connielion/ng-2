@@ -15,6 +15,7 @@ export class UsersComponent implements OnInit {
 
   users = [];
   exists: Boolean = false;
+
   displayedColumns: string[] = ['firstName', 'lastName', 'email'];
 
   constructor(private userService: UserService, private sessionStorage: SessionStorageService, private token: TokenService) { }
@@ -34,7 +35,8 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
    //  this.getAllUsers();
    // alert(this.sessionStorage.get('token'));
-    this.token.checkToken();
+   // this.token.checkToken('/login'); // gen both, gen session, to go users and redirect to Login
+   this.token.checkToken('/');
   }
 
 }

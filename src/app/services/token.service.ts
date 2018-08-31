@@ -53,7 +53,7 @@ export class TokenService {
     this.localStorage.set('token', token);
   }
 */
-  checkToken() {
+  checkToken(redirect) {
     const localToken = this.localStorage.get('token');
     const sessionToken = this.sessionStorage.get('token');
 
@@ -62,11 +62,10 @@ export class TokenService {
       // console.log(`Session Storage Token: ${sessionToken}`);
       // alert('Tokens match.');
       // if tokens match
+
       alert('You do not have the same token.');
-    } else {
-      alert('Tokens do not match.');
-      // console.log(`Local Storage Token: ${localToken}`);
-      // console.log(`Session Storage Token: ${sessionToken}`);
+
+      this.router.navigateByUrl(redirect);
     }
 
   }
