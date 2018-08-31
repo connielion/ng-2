@@ -7,7 +7,7 @@ import { MatInputModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatTableModule } from '@angular/material';
@@ -27,7 +27,8 @@ import { ProductsComponent } from './components/products/products.component';
     RegisterComponent,
     UsersComponent,
     ProfileComponent,
-    ProductsComponent
+    ProductsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,8 @@ import { ProductsComponent } from './components/products/products.component';
     MatInputModule,
     MatTableModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
