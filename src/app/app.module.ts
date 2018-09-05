@@ -17,6 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './components/users/users.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ProfileHomeComponent } from './components/profile/profile-home/profile-home.component';
+import { ProfileContactComponent } from './components/profile/profile-contact/profile-contact.component';
+import { ProfileAboutComponent } from './components/profile/profile-about/profile-about.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { ProductsComponent } from './components/products/products.component';
     UsersComponent,
     ProfileComponent,
     ProductsComponent,
+    ProfileHomeComponent,
+    ProfileContactComponent,
+    ProfileAboutComponent,
 
   ],
   imports: [

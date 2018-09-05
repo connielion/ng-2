@@ -22,11 +22,8 @@ export class LoginComponent implements OnInit {
     ]),
     passwordFormControl: new FormControl('', [
       Validators.required,
-      Validators.email
     ])
   };
-
-
 
   matcher = new ErrorStateManager();
 

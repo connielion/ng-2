@@ -7,20 +7,23 @@
       <input matInput type="text" placeholder="Email" name="email"
        [errorStateMatcher]="matcher"
       [formControl]="authUser.emailFormControl">
-
-      <mat-error *ngIf="authUser.emailFormControl.hasError('email') && !authUser.emailFormControl.hasError('required')">Please enter an valid email address.</mat-error>
+ <!--invalid email error-->
+      <mat-error *ngIf="authUser.emailFormControl.hasError('email') &&
+       !authUser.emailFormControl.hasError('required')">Please enter an
+       valid email address.</mat-error>
+ <!--required error-->
       <mat-error *ngIf="authUser.emailFormControl.hasError('required')">
         Email is <strong>required</strong>
       </mat-error>
+
     </mat-form-field>
     <!--password input-->
     <mat-form-field>
-      <input matInput type="password" placeholder="Password" name="password" [formControl]="authUser.passwordFormControl">
+      <input matInput type="password" placeholder="Password" name="password"
+      [formControl]="authUser.passwordFormControl" [errorStateMatcher]="matcher">
     </mat-form-field>
- <!--password input-->
-
-
-      <mat-error *ngIf="authUser.passwordFormControl.hasError('required')">
+ <!--password error-->
+    <mat-error *ngIf="authUser.passwordFormControl.hasError('required')">
         Password is <strong>required</strong>
       </mat-error>
 
