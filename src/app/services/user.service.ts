@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 import { User } from '../classes/user';
 import { ApiserviceService } from '../services/api.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { LocalStorageService } from '../services/local-storage.service';
+import { Iuser } from '../interfaces/iuser';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private api: ApiserviceService, private router: Router, private localStorage: LocalStorageService) { }
+  profileUrl: string;
+  currentProfile: Iuser;
+
+  constructor(private api: ApiserviceService, private router: Router, private localStorage: LocalStorageService, private route: ActivatedRoute) { }
 
 // register()
   register(user: User) {
@@ -43,6 +47,10 @@ getUser(_id) {
 
 getAllUsers() {
   return this.api.get('/getAllUsers');
+}
+
+getProfileUrl() {
+  console.log(this.route.snapshot.url);
 }
 
 }

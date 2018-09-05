@@ -10,7 +10,7 @@ import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatTableModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatTableModule, MatTabsModule } from '@angular/material';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +20,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProfileHomeComponent } from './components/profile/profile-home/profile-home.component';
 import { ProfileContactComponent } from './components/profile/profile-contact/profile-contact.component';
 import { ProfileAboutComponent } from './components/profile/profile-about/profile-about.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ProfileAboutComponent } from './components/profile/profile-about/profil
     ProfileHomeComponent,
     ProfileContactComponent,
     ProfileAboutComponent,
+    NotFoundComponent,
 
   ],
   imports: [
@@ -49,6 +51,7 @@ import { ProfileAboutComponent } from './components/profile/profile-about/profil
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatTabsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule
