@@ -18,8 +18,8 @@ export class PostsService {
     return this.apiService.get('/posts');
   }
 
-  getPost(id: string) {
-    this.apiService.get(`/post/${id}`);
+  getPost(_id: string) {
+    this.apiService.get(`/post/${_id}`);
   }
 
   makePost(post: Post) {
