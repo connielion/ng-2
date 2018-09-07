@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit {
   /* user: type = user interface */
   user: Iuser;
   url: string = '';
+  isActive: boolean;
 
   constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) { }
 

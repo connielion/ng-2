@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'users', component: UsersComponent},
-
+/*
   { path: 'user/:id', component: ProfileComponent,
     // ng g c components/profile/profileHome + profileContact + profileAbout
     children: [
@@ -27,8 +27,10 @@ const routes: Routes = [
       { path: 'about', component: ProfileAboutComponent }
     ]
   },
+  */
+  { path: 'user/:id', loadChildren: '() => ProfileModule' },
   { path: 'products', component: ProductsComponent},
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent } // **
 ];
 
 
