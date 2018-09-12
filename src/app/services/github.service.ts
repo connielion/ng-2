@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GithubService {
 
-  githubUrl: 'https://api.github.com/users/connielion/repos';
+  githubUrl = 'https://api.github.com/users/connielion/repos';
 
   constructor(private http: HttpClient) { }
 

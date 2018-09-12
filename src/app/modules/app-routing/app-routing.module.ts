@@ -31,7 +31,7 @@ const routes: Routes = [
   */
   { path: 'user/:id', loadChildren: '() => ProfileModule' },
   { path: 'products', component: ProductsComponent},
-  { path: '**', component: NotFoundComponent }, // **
+  // { path: '**', component: NotFoundComponent }, // **
   { path: 'github', component: GithubComponent}
 ];
 

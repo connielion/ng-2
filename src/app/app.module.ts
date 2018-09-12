@@ -22,6 +22,7 @@ import { ProfileContactComponent } from './components/profile/profile-contact/pr
 import { ProfileAboutComponent } from './components/profile/profile-about/profile-about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { GithubComponent } from './components/github/github.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { GithubComponent } from './components/github/github.component';
     ProfileAboutComponent,
     NotFoundComponent,
     GithubComponent,
+    SearchPipe,
 
   ],
   imports: [

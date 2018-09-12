@@ -9,12 +9,22 @@ import { GithubService } from '../../services/github.service';
 })
 export class GithubComponent implements OnInit {
 
+  repos: any;
+
   constructor(private github: GithubService) { }
 
   getAllRepos() {
     return this.github.getAllRepos().subscribe(
-      res => console.log(res)
+      res => { this.repos = res; }
     );
+  }
+
+  showDescription(desc) {
+    if (desc === null) {
+      return 'There was no description provided';
+    } else {
+      return desc;
+    }
   }
 
   ngOnInit() {
