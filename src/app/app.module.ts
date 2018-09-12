@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatCardModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -21,6 +21,7 @@ import { ProfileHomeComponent } from './components/profile/profile-home/profile-
 import { ProfileContactComponent } from './components/profile/profile-contact/profile-contact.component';
 import { ProfileAboutComponent } from './components/profile/profile-about/profile-about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { GithubComponent } from './components/github/github.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ProfileContactComponent,
     ProfileAboutComponent,
     NotFoundComponent,
+    GithubComponent,
 
   ],
   imports: [
@@ -54,7 +56,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MatTabsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
