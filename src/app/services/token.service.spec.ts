@@ -1,11 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { TokenService } from './token.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('TokenService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TokenService]
+      providers: [TokenService],
+      imports: [ RouterTestingModule ]
     });
   });
 

@@ -10,6 +10,7 @@ import { GithubService } from '../../services/github.service';
 export class GithubComponent implements OnInit {
 
   repos: any;
+  searchText: any;
 
   constructor(private github: GithubService) { }
 
@@ -24,6 +25,16 @@ export class GithubComponent implements OnInit {
       return 'There was no description provided';
     } else {
       return desc;
+    }
+  }
+
+  checkDate(createdDate) {
+    const d = new Date();
+    const created = new Date(createdDate);
+
+    d.setFullYear(d.getFullYear() + 1);
+    if (d > created) {
+      return true;
     }
   }
 

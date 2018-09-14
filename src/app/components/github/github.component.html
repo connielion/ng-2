@@ -3,8 +3,11 @@
     My Github Repos
 
   </h1>
+  <div class="text-center">
+      <input type="text" placeholder="Search repos..." [(ngModel)]="searchText" class="search text-center">
+  </div>
   <div>
-    <mat-card class="myCard" *ngFor="let repo of repos">
+    <mat-card class="myCard" *ngFor="let repo of repos | search: searchText">
       <mat-card-title>
         {{ repo.name }}
       </mat-card-title>
@@ -17,7 +20,7 @@
 
         <p [ngClass]="repo.language">{{ repo.language }}</p>
 
-        <p>Created: {{ repo.created_at | date: "longDate" }}</p>
+        <p [ngClass]="checkDate(repo.created_at) ? 'newer-date' : ''">Created: {{ repo.created_at | date: "longDate" }}</p>
 
       </mat-card-content>
       <mat-card-actions>

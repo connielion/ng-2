@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GithubComponent } from './github.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { SearchPipe } from '../../pipes/search.pipe';
+// import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('GithubComponent', () => {
   let component: GithubComponent;
@@ -8,7 +12,9 @@ describe('GithubComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GithubComponent ]
+      declarations: [ GithubComponent, SearchPipe ],
+      imports: [ HttpClientModule ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));

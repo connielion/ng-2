@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatInputModule, MatCardModule } from '@angular/material';
+import { MatInputModule, MatCardModule, MatHeaderRowDef } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -59,7 +59,8 @@ import { SearchPipe } from './pipes/search.pipe';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatHeaderRowDef
   ],
   providers: [],
   bootstrap: [AppComponent]
