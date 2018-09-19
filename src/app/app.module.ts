@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatInputModule, MatCardModule, MatHeaderRowDef } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -10,7 +9,11 @@ import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatTableModule, MatTabsModule } from '@angular/material';
+
+import { MatToolbarModule, MatButtonModule,
+  MatSidenavModule, MatIconModule, MatListModule,
+  MatFormFieldModule, MatTableModule, MatTabsModule, MatInputModule, MatCardModule } from '@angular/material';
+
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +26,10 @@ import { ProfileAboutComponent } from './components/profile/profile-about/profil
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { GithubComponent } from './components/github/github.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { fakeBackendProvider } from './fake-backend/fake-backend';
+import { MockBackend } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +47,7 @@ import { SearchPipe } from './pipes/search.pipe';
     NotFoundComponent,
     GithubComponent,
     SearchPipe,
+    AdminComponent,
 
   ],
   imports: [
@@ -60,9 +68,12 @@ import { SearchPipe } from './pipes/search.pipe';
     HttpClientModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatHeaderRowDef
   ],
-  providers: [],
+  providers: [
+    MockBackend,
+    BaseRequestOptions,
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

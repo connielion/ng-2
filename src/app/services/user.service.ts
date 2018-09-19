@@ -28,7 +28,7 @@ export class UserService {
 
 // login()
 login(user: any) {
-  return this.api.post('userLogin/', user).subscribe((res: any) => {
+  return this.api.post('api/authenticate', user).subscribe((res: any) => {
    // this.localStorage.set('currentUser', res.user);
     this.router.navigateByUrl('/');
   }, err => console.log(err), () => this.router.navigateByUrl('/')

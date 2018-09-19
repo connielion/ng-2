@@ -12,6 +12,7 @@ import { ProfileContactComponent } from '../../components/profile/profile-contac
 import { ProfileAboutComponent } from '../../components/profile/profile-about/profile-about.component';
 import { NotFoundComponent } from '../../components/not-found/not-found.component';
 import { GithubComponent } from '../../components/github/github.component';
+import { AdminComponent } from '../../components/admin/admin.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'user/:id', loadChildren: '() => ProfileModule' },
   { path: 'products', component: ProductsComponent},
   { path: '**', component: NotFoundComponent }, // **
-  { path: 'github', component: GithubComponent}
+  { path: 'github', component: GithubComponent},
+  { path: 'admin', component: AdminComponent }
 ];
 
 
