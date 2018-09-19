@@ -1,12 +1,13 @@
 <div class="margin-body">
   <h1 class="text-center">Login</h1>
 
-  <form class="form-container" (ngSubmit)="login()">
+  <form class="form-container" #f=ngForm (ngSubmit)="login(f.value)">
 
     <mat-form-field>
       <input matInput type="text" placeholder="Email" name="email"
        [errorStateMatcher]="matcher"
-      [formControl]="authUser.emailFormControl">
+      ngModel class ='form-control'
+      >
  <!--invalid email error-->
       <mat-error *ngIf="authUser.emailFormControl.hasError('email') &&
        !authUser.emailFormControl.hasError('required')">Please enter an
@@ -20,7 +21,7 @@
     <!--password input-->
     <mat-form-field>
       <input matInput type="password" placeholder="Password" name="password"
-      [formControl]="authUser.passwordFormControl" [errorStateMatcher]="matcher">
+      ngModel class='form-control' [errorStateMatcher]="matcher">
     </mat-form-field>
  <!--password error-->
     <mat-error *ngIf="authUser.passwordFormControl.hasError('required')">

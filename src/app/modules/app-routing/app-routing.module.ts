@@ -14,6 +14,8 @@ import { NotFoundComponent } from '../../components/not-found/not-found.componen
 import { GithubComponent } from '../../components/github/github.component';
 import { AdminComponent } from '../../components/admin/admin.component';
 
+import { AuthGuard } from '../../services/auth-guard.service';
+
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'login', component: LoginComponent},
@@ -34,7 +36,7 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent},
   { path: '**', component: NotFoundComponent }, // **
   { path: 'github', component: GithubComponent},
-  { path: 'admin', component: AdminComponent }
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]}
 ];
 
 

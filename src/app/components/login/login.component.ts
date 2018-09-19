@@ -4,6 +4,9 @@ import { User } from '../../classes/user';
 
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import { ErrorStateManager } from '../../classes/error-state-manager';
+import { AuthService } from '../../services/auth.service';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +16,7 @@ import { ErrorStateManager } from '../../classes/error-state-manager';
 export class LoginComponent implements OnInit {
 
 
-  constructor(private userService: UserService) { }
+  constructor(private authService: AuthService, private router: Router ) { }
 
   authUser = {
     emailFormControl: new FormControl('', [
@@ -26,9 +29,20 @@ export class LoginComponent implements OnInit {
   };
 
   matcher = new ErrorStateManager();
+  invalidLogin: boolean;
 
-  login() {
-    this.userService.login(this.authUser);
+  login(credentials) {
+    // this.userService.login(this.authUser);
+    this.authService.login(credentials).subscribe(
+      result => {
+        if (result) {
+
+          this.router.navigate(['/']);
+        } else {
+          this.invalidLogin = true;
+        }
+      }
+    );
   }
 
   ngOnInit() {
