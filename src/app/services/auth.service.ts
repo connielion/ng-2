@@ -12,7 +12,7 @@ export class AuthService {
 
   currentUser: any;
 
-  constructor(private http: Http, private router: Router, private jwtHelper: JwtHelper) { }
+  constructor(private http: Http, private router: Router) { }
 
   login(credentials) {
     console.log(credentials);

@@ -15,6 +15,7 @@ import { GithubComponent } from '../../components/github/github.component';
 import { AdminComponent } from '../../components/admin/admin.component';
 
 import { AuthGuard } from '../../services/auth-guard.service';
+import { ProfileModule } from '../profile/profile.module';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -32,7 +33,7 @@ const routes: Routes = [
     ]
   },
   */
-  { path: 'user/:id', loadChildren: '() => ProfileModule' },
+  { path: 'user/:id', loadChildren: () => ProfileModule },
   { path: 'products', component: ProductsComponent},
   { path: '**', component: NotFoundComponent }, // **
   { path: 'github', component: GithubComponent},
